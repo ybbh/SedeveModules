@@ -14,8 +14,7 @@ TestState ==
        /\ CreateState(a1)
        /\ CreateState(a2)
        /\ LET s == QueryAllStates
-          IN /\ PrintT(s) 
-          	 /\ {a1, a2} = s
+          IN {a1, a2} = s
 
 	   
 ASSUME(TestState)
@@ -29,8 +28,8 @@ TestStoreLoad ==
        /\ DBOpen("/tmp/value.db")
        /\ StoreValue(a, a)
        /\ StoreValue(b, b)
-       /\ PrintT(LoadValue(a))
-       /\ PrintT(LoadValue(b))
+       /\ a = LoadValue(a)
+       /\ b = LoadValue(b)
 
 	   
 ASSUME(TestStoreLoad)

@@ -108,7 +108,7 @@ import tlc2.overrides.*;
 			
 			
 			String get_stmt = "select json_string from store where named_key = ?;";
-			this.prepared_query_state_stmt = this.connection.prepareStatement(get_stmt);
+			this.prepared_get_value_stmt = this.connection.prepareStatement(get_stmt);
 
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -157,6 +157,7 @@ import tlc2.overrides.*;
 			System.err.println(e.getMessage());
 			e.printStackTrace();
 		}
+
 		return vec;
 	}
 
